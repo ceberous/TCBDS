@@ -11,21 +11,10 @@ const Eris = require( "eris" );
 var discordBot = null;
 var discordCreds = null;
 
-function W_SLEEP( ms ) { return new Promise( resolve => setTimeout( resolve , ms ) ); }
-
 const Base64 = require( "js-base64" ).Base64;
 
-// function encodeBase64( wString ) {
-// 	if ( !wString ) { return "error"; }
-// 	var a1 = new Buffer( wString );
-// 	return a1.toString( "base64" );
-// };
-// function decodeBase64( wString ) {
-// 	var a1 = "";
-// 	try { a1 = new Buffer( wString , "base64" ); }
-// 	catch( e ) { console.log( "error decoding base64" ); console.log( wString ); }
-// 	return a1.toString();
-// };
+function W_SLEEP( ms ) { return new Promise( resolve => setTimeout( resolve , ms ) ); }
+
 
 // DISCORD-BOT
 // ==========================================================================================
@@ -327,7 +316,7 @@ function CUSTOM_CHERRIO_PARSER( wBody ) {
 					if ( wArticle.description !== null ) { formated_post = formated_post + " --- " + wArticle.description; }
 					if ( wArticle.url ) { formated_post = formated_post + " " + wArticle.url; }
 					wArticle.formated_post = formated_post;
-					final_articles.push( wArticle );
+					final_articles.unshift( wArticle );
 				}
 			}
 		}
@@ -402,5 +391,7 @@ function GET_LATEST_COLUMNS_PAGE() {
 			}
 		}
 	});
+
+	await POST_ID( "The Cipher Brief Discord Sync Bot Restarted" , discordCreds.channels.general );
 
 })();
