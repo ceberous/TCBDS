@@ -392,6 +392,6 @@ function GET_LATEST_COLUMNS_PAGE() {
 		}
 	});
 
-	await POST_ID( "The Cipher Brief Discord Sync Bot Restarted" , discordCreds.channels.general );
+	await POST_ID( "Bot Restarted" , discordCreds.channels.general );
 
 })();
