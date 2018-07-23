@@ -382,8 +382,8 @@ function GET_LATEST_COLUMNS_PAGE() {
 					if ( unseen_results ) {
 						if ( unseen_results.length > 0 ) {
 							for ( var i = 0; i < unseen_results.length; ++i ) {
-								await POST_ID( unseen_results[ i ].formated_post , discordCreds.channels.general );
 								await W_SLEEP( 1000 );
+								await POST_ID( unseen_results[ i ].formated_post , discordCreds.channels.general );
 							}
 						}
 					}
@@ -392,6 +392,7 @@ function GET_LATEST_COLUMNS_PAGE() {
 		}
 	});
 
+	await W_SLEEP( 3000 );
 	await POST_ID( "Bot Restarted" , discordCreds.channels.general );
 
 })();
