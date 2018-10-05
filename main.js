@@ -316,7 +316,8 @@ function CUSTOM_CHERRIO_PARSER( wBody ) {
 					}
 					//else if ( wArticle.published_time ) { formated_post = "Published @@ " + wArticle.published_time + " --- " + formated_post; }
 					else if ( wArticle.published_time ) { formated_post = "Published @@ " + wArticle.published_time + "\n" + formated_post; }
-					if ( wArticle.description !== null ) { formated_post = formated_post + " --- " + wArticle.description; }
+					//if ( wArticle.description !== null ) { formated_post = formated_post + " --- " + wArticle.description; }
+					if ( wArticle.description !== null ) { formated_post = formated_post + "\n" + wArticle.description; }
 					//if ( wArticle.url ) { formated_post = formated_post + " <" + wArticle.url + ">"; }
 					if ( wArticle.url ) { formated_post = formated_post + "\n<" + wArticle.url + ">"; }
 					wArticle.formated_post = formated_post;
