@@ -305,7 +305,7 @@ function CUSTOM_CHERRIO_PARSER( wBody ) {
 					}
 				}
 				if ( wArticle.title !== null ) {
-					var formated_post = wArticle.title;
+					var formated_post = "**" + wArticle.title + "**";
 					if ( wArticle.updated_time !== null ) {
 						if ( wArticle.published_time !== null ) {
 							formated_post = "Published @@ " + wArticle.published_time + " --- Updated @@ " + wArticle.updated_time  + " --- " + formated_post;
@@ -314,7 +314,7 @@ function CUSTOM_CHERRIO_PARSER( wBody ) {
 					}
 					else if ( wArticle.published_time ) { formated_post = "Published @@ " + wArticle.published_time + " --- " + formated_post; }
 					if ( wArticle.description !== null ) { formated_post = formated_post + " --- " + wArticle.description; }
-					if ( wArticle.url ) { formated_post = formated_post + " " + wArticle.url; }
+					if ( wArticle.url ) { formated_post = formated_post + " <" + wArticle.url + ">"; }
 					wArticle.formated_post = formated_post;
 					final_articles.unshift( wArticle );
 				}
